@@ -4,7 +4,7 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "start": "tsx ./dist/server.js",
+    "start": "node ./dist/server.cjs",
     "dev": "tsx watch ./src/server.ts",
     "build": "tsup src",
     "test": "jest",
@@ -33,6 +33,9 @@
     "typescript": "^5.5.4"
   },
   "dependencies": {
-    "eslint": "8.57.0"
+    "dotenv": "^16.4.5",
+    "eslint": "8.57.0",
+    "fastify": "^4.28.1",
+    "zod": "^3.23.8"
   }
 }
