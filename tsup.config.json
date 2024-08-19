@@ -1,0 +1,13 @@
+{
+    "entry": [
+        "src/server.ts"
+    ],
+    "tsconfig": "tsconfig.json",
+    "format": [
+        "esm",
+        "esm"
+    ],
+    "splitting": false,
+    "sourcemap": true,
+    "clean": true
+}
