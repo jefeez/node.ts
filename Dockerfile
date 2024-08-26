@@ -1,12 +1,20 @@
+FROM node:20.16.0
 
-
-FROM node:latest
 WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
 COPY . .
 
-RUN npm install -g pnpm
-
-RUN pnpm install
-RUN pnpm run build
-CMD [ "pnpm","start" ]
 EXPOSE 3000
+
+ENV NODE_ENV=${APP_ENV}
+ENV DB_USER=${DB_USER}
+ENV DB_PASSWORD=${DB_PASSWORD}
+ENV DB_DATABASE=${DB_DATABASE}
+
+RUN npm run build
+
+CMD [ "npm","run","start" ]
